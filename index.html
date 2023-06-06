@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Model Deployment</title>
+</head>
+<body>
+    <h1>Model Deployment</h1>
+
+    <form action="/predict" method="post">
+        <label for="assessed_value">Assessed Value:</label>
+        <input type="number" name="assessed_value" id="assessed_value" required><br><br>
+
+        <label for="list_year_code">List Year Code:</label>
+        <input type="number" name="list_year_code" id="list_year_code" required><br><br>
+
+        <label for="sales_ratio">Sales Ratio:</label>
+        <input type="number" name="sales_ratio" id="sales_ratio" required><br><br>
+
+        <label for="sale_amount">Sale Amount:</label>
+        <input type="number" name="sale_amount" id="sale_amount" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction Result: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
